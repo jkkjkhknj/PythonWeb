@@ -1,0 +1,10 @@
+{% extends 'base.html' %} <!-- 继承基础模板 -->
+
+{% block content %} <!-- 重写内容部分 -->
+<div class="row">
+  <div class="col-md-12">
+    <h2>用户行为分析</h2>
+    <img src="{{ url_for('static', filename='用户行为分析.png') }}" alt="用户行为分析" class="img-fluid">
+  </div>
+</div>
+{% endblock %}

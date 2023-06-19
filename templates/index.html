@@ -1,0 +1,14 @@
+{% extends 'base.html' %} <!-- 继承基础模板 -->
+
+{% block content %} <!-- 重写内容部分 -->
+<div class="jumbotron">
+  <h1 class="display-4">欢迎来到数据分析网站！</h1>
+  <p class="lead">这是一个使用flask和matplotlib制作的数据分析网站，你可以通过导航栏查看各种图表。</p>
+  <hr class="my-4">
+  <p>如果你还没有账号，请先注册，如果你已经有账号，请登录。</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/register" role="button">注册</a>
+    <a class="btn btn-secondary btn-lg" href="/login" role="button">登录</a>
+  </p>
+</div>
+{% endblock %}

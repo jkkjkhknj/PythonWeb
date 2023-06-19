@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数据分析</title>
+    <!-- 引入bootstrap样式表 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- 创建导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">数据分析</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/各省订单数量排行前十">各省订单数量排行前十</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/年龄段分析">年龄段分析</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/用户行为分析">用户行为分析</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/最高十类商品">最高十类商品</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/性别分析">性别分析</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/用户评分分析">用户评分分析</a>
+            </li>
+            <!-- 添加留言板的链接 -->
+            <li class="nav-item">
+              <a class="nav-link" href="/留言板">留言板</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            {% if current_user.is_authenticated %}
+              <!-- 如果用户已登录，显示用户名和登出链接 -->
+              <li class="nav-item">
+                <span class="navbar-text">欢迎，{{ current_user.id }}</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">登出</a>
+              </li>
+            {% else %}
+              <!-- 如果用户未登录，显示登录和注册链接 -->
+              <li class="nav-item">
+                <a class="nav-link" href="/login">登录</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">注册</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+
+      <!-- 创建容器 -->
+      <div class="container mt-3">
+
+        {% block content %}
+        <!-- 在子模板中重写此部分 -->
+        {% endblock %}
+
+      </div>
+
+      <!-- 引入jquery和bootstrap脚本 -->
+      <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+

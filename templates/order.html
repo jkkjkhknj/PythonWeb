@@ -1,0 +1,10 @@
+{% extends 'base.html' %} <!-- 继承基础模板 -->
+
+{% block content %} <!-- 重写内容部分 -->
+<div class="row">
+  <div class="col-md-12">
+    <h2>各省订单数量排行前十</h2>
+    <img src="{{ url_for('static', filename='各省订单数量排行前十.png') }}" alt="各省订单数量排行前十" class="img-fluid">
+  </div>
+</div>
+{% endblock %}
